@@ -1,0 +1,127 @@
+#%RAML 1.0
+title: emp-onboard-sapi
+description: employee onboadring api
+baseUri: https://localhost:8081/emp-sapi/v1
+/add-employee:
+  post:
+    body:
+      application/json:
+        example:
+          {
+            "empId": "100",
+            "empName": "Balachander",
+            "empStatus": "Software"
+          }
+    responses:
+      200:
+        body:
+          application/json:
+            example:
+              {
+                "Status": "200",
+                "Message": "Successfully employee added"
+              }
+      404:
+        body:
+          application/json:
+            example:
+              {
+                "Status": "404",
+                "Message": "Method not found"
+              }
+      500:
+        body:
+          application/json:
+            example:
+               {
+                "Status": "500",
+                "Message": "Internal server error"
+              }
+/update-employee:
+  post:
+    body:
+      application/json: 
+         example:
+          {
+            "empId": "101",
+            "empName": "balachander",
+            "empStatus": "Welder"
+          }
+        
+    responses:
+      200:
+        body:
+          application/json:
+                example:
+                       {
+                         "Statsu": "200",
+                         "Message": "Successfully updated"
+                       }
+/fetch-employee:
+  get:
+    queryParameters:
+      empId:
+        displayName: empId
+        required: true
+        type: integer
+        example: 1008
+    responses:
+      200:
+        body:
+          application/json:
+            example:
+                {
+                  "empId": "100",
+                  "empName": "Balachander",
+                  "empStatus": "Software"
+                }
+      404:
+        body:
+          application/json:
+            example:
+              {
+                "Status": "404",
+                "Message": "Method not found"
+              }
+      500:
+        body:
+          application/json:
+            example:
+               {
+                "Status": "500",
+                "Message": "Internal server error"
+               }
+/delete-employee/{empId}:
+  get:
+     responses:
+      200:
+        body:
+          application/json:
+            example:
+              {
+                "Status": "200",
+                "Message": "Successfully employee deleted"
+              }
+      404:
+        body:
+          application/json:
+            example:
+              {
+                "Status": "404",
+                "Message": "Method not found"
+              }
+      500:
+        body:
+          application/json:
+            example:
+               {
+                "Status": "500",
+                "Message": "Internal server error"
+               }
+                                                   
+
+          
+          
+                              
+          
+    
