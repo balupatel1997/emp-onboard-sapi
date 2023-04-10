@@ -179,7 +179,7 @@ output application/json
 ---
 {
   Statsu: "200",
-  Message: "Successfully updated status"
+  Message: "Successfully updated status by balu"
 }]]></ee:set-payload>
             </ee:message>
         </ee:transform>
